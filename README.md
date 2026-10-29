@@ -101,8 +101,8 @@ Example response:
 - [x] Develop a Spring Boot REST API
 - [x] Implement automated integration tests
 - [x] Build an executable application
-- [ ] Containerize the application using Docker
-- [ ] Configure Docker Compose
+- [X] Containerize the application using Docker
+- [X] Configure Docker Compose
 - [ ] Automate builds and tests using GitHub Actions
 - [ ] Publish versioned images to GitHub Container Registry
 - [ ] Configure an Ubuntu deployment environment using Ansible
@@ -125,3 +125,39 @@ This project explores how application development integrates with DevOps practic
 **Day 1:** Spring Boot REST API implementation and testing completed.
 
 Docker containerization and CI/CD automation are the next development stages.
+
+
+## Docker Deployment
+
+The application uses a multi-stage Docker build to
+separate application compilation from execution.
+
+### Build the Docker Image
+
+docker build -t cicd-lab:v1 .
+
+### Run with Docker Compose
+
+docker compose up -d --build
+
+### Inspect the Running Application
+
+docker compose ps
+docker compose logs -f api
+docker compose stats
+
+### Stop the Application
+
+docker compose down
+
+## Container Recovery
+
+The Docker Compose configuration uses the
+`unless-stopped` restart policy.
+
+Recovery was tested by terminating the Java process
+inside the container and verifying that Docker
+restarted the application automatically.
+
+The application health endpoint was used to
+confirm successful recovery.
