@@ -1,8 +1,13 @@
 # Spring Boot CI/CD Lab
 
-A hands-on DevOps project focused on building, testing, containerizing, and deploying a Spring Boot REST API through an automated CI/CD pipeline.
+A project focused on building, testing, containerizing, and deploying a Spring Boot REST API through an automated CI/CD pipeline.
 
-The goal is to gain practical experience with CI/CD workflows, containerization, Linux server administration, and deployment automation.
+pre-requisites
+------------------
+- **experience with CI/CD workflows**, 
+- **containerization**, 
+- **Linux server administration**,
+- **deployment automation**
 
 ## Tech Stack
 
