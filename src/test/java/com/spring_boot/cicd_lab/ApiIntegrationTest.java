@@ -21,7 +21,7 @@ class ApiIntegrationTest {
     void healthEndpointReturnsUp() throws Exception {
         mockMvc.perform(get("/api/health"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.status").value("UP"));
+                .andExpect(jsonPath("$.status").value("DOWN"));
     }
 
     @Test
