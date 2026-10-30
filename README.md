@@ -103,7 +103,7 @@ Example response:
 - [x] Build an executable application
 - [X] Containerize the application using Docker
 - [X] Configure Docker Compose
-- [ ] Automate builds and tests using GitHub Actions
+- [X] Automate builds and tests using GitHub Actions
 - [ ] Publish versioned images to GitHub Container Registry
 - [ ] Configure an Ubuntu deployment environment using Ansible
 - [ ] Configure Nginx as a reverse proxy
@@ -161,3 +161,28 @@ restarted the application automatically.
 
 The application health endpoint was used to
 confirm successful recovery.
+
+
+## Continuous Integration
+
+GitHub Actions automatically builds and tests the
+Spring Boot application when changes are pushed to
+main or submitted through a pull request.
+
+### CI Workflow
+
+1. Check out repository source code.
+2. Configure Eclipse Temurin JDK 21.
+3. Restore cached Maven dependencies.
+4. Compile the application and run automated tests.
+5. Package the executable JAR.
+6. Upload the JAR as a workflow artifact.
+
+### Failure Handling
+
+A failed Maven build or automated test causes the
+CI job to fail.
+
+A separate branch was used to demonstrate failure
+detection and recovery without intentionally
+breaking the main branch.
